@@ -40,10 +40,11 @@ public:
     void processClick(Point position);
     bool isAutoDetectWorking();
     void five_secs_reset();
-    QTimer *fivesec_timer;
 
 public slots:
     void slot_processClick();
+    void slot_countdown();
+
 
 private:
     Settings &settings;
@@ -52,7 +53,7 @@ private:
     MouseControlModule *controlModule;
     cv::Mat prevFrame;
     QTime featureCheckTimer;
-
+    QTime countdown = QTime(0,0,5);
 };
 
 } // namespace CMS

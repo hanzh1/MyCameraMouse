@@ -32,6 +32,13 @@ void ITrackingModule::drawOnFrame(cv::Mat &frame, Point point)
     int height = (int) (frame.size().height * ratio);
     cv::Rect rectangle(point.X() - width / 2, point.Y() - height / 2, width, height);
     ImageProcessing::drawGreenRectangle(frame, rectangle);
+
+}
+
+void ITrackingModule::five_sec_drawText(cv::Mat &frame, std::string str){
+    int width = (int) (frame.size().width);
+    int height = (int) (frame.size().height);
+    ImageProcessing::drawText(frame, str, width/2, height/2);
 }
 
 TrackingModuleSanityCheck::TrackingModuleSanityCheck(ITrackingModule *trackingModule) :

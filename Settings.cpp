@@ -26,7 +26,8 @@ Settings::Settings(QObject *parent) :
     radiusRel(0.05),
     screenResolution(MonitorFactory::newMonitor()->getResolution()),
     reverseHorizontal(false),
-    autoDetectNose(false)
+    autoDetectNose(false),
+    fiveSecOnLoss(false)
 {
 }
 
@@ -100,6 +101,10 @@ double Settings::getDwellRadius()
     return radiusRel * screenResolution.X();
 }
 
+bool Settings::isFiveSecOnLoss(){
+    return fiveSecOnLoss;
+}
+
 void Settings::setHorizontalGain(int horizontalGain)
 {
     this->horizontalGain = horizontalGain;
@@ -134,6 +139,13 @@ void Settings::setAutoDetectNose(bool autoDetectNose)
 {
     this->autoDetectNose = autoDetectNose;
 }
+
+void Settings::setFiveSecOnLoss(bool fiveSecOnLoss)
+{
+    this->fiveSecOnLoss = fiveSecOnLoss;
+}
+
+
 
 } // namespace CMS
 

@@ -98,10 +98,12 @@ void TemplateTrackingModule::setTrackPoint(cv::Mat &frame, Point point)
 void TemplateTrackingModule::drawOnFrame(cv::Mat &frame, Point point)
 {
 #ifdef DEBUGING
-    int width = fullTemplateSize.width;
-    int height = fullTemplateSize.height;
+    float ratio = 0.03;
+    int width = (int) (frame.size().width * ratio);
+    int height = (int) (frame.size().height * ratio);
     cv::Rect rectangle(point.X() - width / 2, point.Y() - height / 2, width, height);
     ImageProcessing::drawGreenRectangle(frame, rectangle);
+    ImageProcessing::drawText(frame, "Hello????", width / 2, height / 2);
 #else
     ITrackingModule::drawOnFrame(frame, point);
 #endif

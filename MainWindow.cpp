@@ -16,7 +16,8 @@
  */
 
 #include <QCameraInfo>
-#include <QMessageBox>
+#include <QMessageBox>'
+#include <QWidget>
 
 #include "MainWindow.h"
 #include "ui_mainWindow.h"
@@ -39,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowTitle(tr("CameraMouseSuite"));
     setupCameraWidgets();
     setupSettingsWidgets();
+
 }
 
 MainWindow::~MainWindow()

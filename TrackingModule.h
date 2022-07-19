@@ -31,6 +31,7 @@ public:
     virtual Point track(cv::Mat &frame) = 0;
     virtual void setTrackPoint(cv::Mat &frame, Point point) = 0;
     virtual void drawOnFrame(cv::Mat &frame, Point point);
+    virtual void five_sec_drawText(cv::Mat &frame, std::string str);
     virtual cv::Size getImageSize() = 0;
     virtual bool isInitialized() = 0;
     virtual void stopTracking() = 0;
